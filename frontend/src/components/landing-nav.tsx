@@ -1,0 +1,3 @@
+export function LandingNav() {
+  return <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-6"><a href="/" className="text-xl font-semibold tracking-tight">ECHO<span className="text-violet-400">.</span></a><div className="hidden items-center gap-7 text-sm text-zinc-500 md:flex"><a href="/dashboard" className="hover:text-white">Dashboard</a><a href="/documents" className="hover:text-white">Documents</a><a href="/twin" className="hover:text-white">Twin</a></div><a href="/documents" className="rounded-xl border border-white/[.13] bg-white/[.04] px-4 py-2 text-sm text-zinc-100 transition hover:bg-white/[.08]">Upload syllabus</a></nav>;
+}

@@ -1,0 +1,21 @@
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Frontend
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+
+# Backend
+backend/.venv/
+backend/__pycache__/
+backend/**/*.py[cod]
+backend/*.db
+backend/uploads/
+
+# Editors
+.DS_Store
+.idea/
+.vscode/

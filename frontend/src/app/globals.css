@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { --mint: #94f7c5; --emerald: #20bb79; --teal: #25c7b6; --panel: rgba(12, 27, 23, .68); --line: rgba(148, 247, 197, .14); }
+
+@layer base {
+  * { @apply border-white/10; }
+  html { scroll-behavior: smooth; }
+  body { min-height: 100vh; overflow-x: hidden; background: #050807; color: #eefcf5; font-feature-settings: "ss01", "cv02"; }
+  body::before { content: ""; position: fixed; inset: 0; z-index: -2; pointer-events: none; background: radial-gradient(ellipse 65% 52% at 16% -12%, rgba(25, 133, 91, .28), transparent 70%), radial-gradient(ellipse 52% 50% at 96% 24%, rgba(19, 127, 124, .20), transparent 72%), radial-gradient(ellipse 48% 42% at 50% 105%, rgba(29, 111, 73, .16), transparent 68%), #050807; }
+  body::after { content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none; opacity: .32; background-image: linear-gradient(rgba(148,247,197,.045) 1px, transparent 1px), linear-gradient(90deg, rgba(148,247,197,.04) 1px, transparent 1px); background-size: 52px 52px; mask-image: linear-gradient(to bottom, black, transparent 80%); }
+  ::selection { background: rgba(82, 225, 155, .32); color: white; }
+  :focus-visible { outline: 2px solid var(--mint); outline-offset: 3px; }
+}
+
+@layer utilities {
+  .surface { position: relative; overflow: hidden; border: 1px solid var(--line); background: linear-gradient(135deg, rgba(255,255,255,.065), rgba(255,255,255,.015) 42%, rgba(41,194,132,.045)), var(--panel); box-shadow: inset 0 1px 0 rgba(255,255,255,.055), 0 18px 55px rgba(0,0,0,.28), 0 0 38px rgba(32,187,121,.045); backdrop-filter: blur(20px) saturate(135%); }
+  .surface::before { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .7; background: linear-gradient(115deg, rgba(148,247,197,.09), transparent 24%, transparent 70%, rgba(37,199,182,.055)); }
+  .surface:hover { border-color: rgba(148,247,197,.24); box-shadow: inset 0 1px 0 rgba(255,255,255,.07), 0 24px 65px rgba(0,0,0,.35), 0 0 36px rgba(32,187,121,.08); transform: translateY(-2px); }
+  .eyebrow { @apply text-xs font-semibold uppercase tracking-[0.18em]; color: var(--mint); }
+  .grid-glow { background-image: linear-gradient(rgba(148,247,197,.06) 1px, transparent 1px), linear-gradient(90deg, rgba(148,247,197,.06) 1px, transparent 1px); background-size: 44px 44px; mask-image: linear-gradient(to bottom, black, transparent); }
+  .aurora-orb { position: absolute; border-radius: 9999px; filter: blur(76px); opacity: .18; animation: drift 18s ease-in-out infinite alternate; will-change: transform; }
+  .shimmer { background: linear-gradient(100deg, transparent 20%, rgba(255,255,255,.09) 50%, transparent 80%); background-size: 200% 100%; animation: shimmer 1.5s infinite; }
+}
+
+@keyframes drift { from { transform: translate3d(-5%, -3%, 0) scale(.94); } to { transform: translate3d(7%, 5%, 0) scale(1.08); } }
+@keyframes shimmer { to { background-position: -200% 0; } }
+
+/* Product-wide palette bridge: preserves existing component API while evolving ECHO to its emerald system. */
+.text-violet-300, .text-violet-200, .text-violet-100 { color: var(--mint) !important; }
+.bg-violet-400\/10, .bg-violet-500\/10, .bg-violet-400\/\[\.08\], .bg-violet-400\/\[\.06\] { background-color: rgba(32,187,121,.10) !important; }
+.border-violet-300\/15, .border-violet-400\/25, .border-violet-400\/30 { border-color: rgba(148,247,197,.25) !important; }
+.accent-violet-400 { accent-color: var(--emerald) !important; }
