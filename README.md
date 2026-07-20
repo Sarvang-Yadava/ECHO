@@ -59,6 +59,39 @@ Frontend (Node 20+):
 3. copy .env.local.example .env.local
 4. npm run dev
 
+## Deploying to a Live Server
+
+### Frontend on Vercel
+
+1. Create a new Vercel project and import this repository.
+2. Set the project root to the repository root so the provided Vercel config can build the frontend from the [frontend](frontend) folder.
+3. Add this environment variable in Vercel:
+   - NEXT_PUBLIC_API_URL=https://your-backend-url/api/v1
+4. Deploy.
+
+### Frontend on Netlify
+
+1. Create a new site from this repository.
+2. Set the build command to: `cd frontend && npm install && npm run build`
+3. Set the publish directory to: `frontend/.next`
+4. Add the same environment variable:
+   - NEXT_PUBLIC_API_URL=https://your-backend-url/api/v1
+5. Deploy.
+
+### Backend on Render, Railway, Fly.io, or similar
+
+1. Create a web service from the [backend](backend) folder.
+2. Use Python 3.12.
+3. Set the build command to: `pip install .`
+4. Set the start command to: `uvicorn app.main:app --host 0.0.0.0 --port $PORT`
+5. Add these environment variables:
+   - SECRET_KEY=change-this-to-a-long-random-value
+   - CORS_ORIGINS=https://your-frontend-domain.com
+   - DATABASE_URL=sqlite:///./echo.db
+6. Deploy.
+
+> SQLite is fine for demos and small deployments, but a managed Postgres database is the better long-term choice for production.
+
 ## API Snapshot
 
 Base URL: /api/v1

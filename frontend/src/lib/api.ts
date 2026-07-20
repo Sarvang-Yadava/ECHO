@@ -1,4 +1,8 @@
-const API_URL = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000/api/v1";
+const DEFAULT_API_URL = process.env.NODE_ENV === "development"
+  ? "http://localhost:8000/api/v1"
+  : "/api/v1";
+
+const API_URL = (process.env.NEXT_PUBLIC_API_URL ?? DEFAULT_API_URL).replace(/\/$/, "");
 
 export type DocumentListItem = {
   id: string;
