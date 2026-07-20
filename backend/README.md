@@ -2,6 +2,15 @@
 
 FastAPI backend for ECHO. This service owns authentication, document ingestion and analysis, digital twin materialization, dashboard aggregation, and simulation persistence.
 
+## Feature Overview
+
+- JWT authentication with Argon2 password hashing
+- Subject and document management for student academic data
+- Document upload, extraction, and structured analysis pipeline
+- Digital twin updates driven by analysis results and manual topic additions
+- Dashboard and twin aggregation endpoints for frontend consumption
+- Immediate simulation endpoints for what-if academic scenarios
+
 ## Stack
 
 - Python 3.12+
@@ -134,3 +143,9 @@ Service image is defined in backend/Dockerfile and run through docker-compose fr
 - No Alembic migration workflow yet.
 - Demo-user fallback is enabled by default for local UX.
 - SQLite is default development datastore; production deployment should use managed database and hardened secrets.
+
+## How Copilot and Codex Were Used
+
+- Copilot helped draft the API documentation structure, endpoint summaries, and deployment notes.
+- Codex-style assistance helped trace the backend startup path, CORS behavior, and Render deployment settings.
+- The resulting documentation was checked against the actual FastAPI app in app/main.py and the settings in app/core/config.py.

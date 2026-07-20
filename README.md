@@ -2,6 +2,15 @@
 
 ECHO is an academic intelligence platform that turns student documents into a living digital twin, then uses that twin for dashboards and study outcome simulation.
 
+## Feature Overview
+
+- Document ingestion for syllabus and study files in PDF, DOCX, TXT, PNG, JPG, and JPEG formats
+- Text extraction and structured academic analysis for topics, modules, concepts, assignments, and exam dates
+- Digital twin materialization at the user and subject level
+- Dashboard and twin snapshots for progress, confidence, and study signals
+- What-if simulation for study habits, attendance, sleep, and revision patterns
+- Modern Next.js frontend for document management, dashboard, twin view, and simulation
+
 ## What This Project Does
 
 - Ingests uploaded syllabus and study documents (PDF, DOCX, TXT, PNG, JPG, JPEG)
@@ -128,3 +137,9 @@ Base URL: /api/v1
 
 - Backend details: [backend/README.md](backend/README.md)
 - Frontend details: [frontend/README.md](frontend/README.md)
+
+## How Copilot and Codex Were Used
+
+- GitHub Copilot was used to draft and refine repository documentation, deployment instructions, and environment variable guidance.
+- Codex-style assistance was used to inspect the backend/frontend wiring, identify deployment issues, and suggest exact config values for Vercel and Render.
+- Both were used as implementation aids, while the actual code and configuration changes were verified against the workspace files and build output.

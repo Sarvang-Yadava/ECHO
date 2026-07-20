@@ -2,6 +2,15 @@
 
 Next.js frontend for ECHO. It provides the user interface for document upload and analysis, digital twin visualization, dashboard insights, and what-if simulation.
 
+## Feature Overview
+
+- Landing page for the product overview and entry flow
+- Document workspace for upload, progress tracking, and detail review
+- Dashboard view for academic health, confidence, deadlines, and topic signals
+- Twin view for knowledge graph and student profile summaries
+- Simulator page for what-if study scenario predictions
+- Shared dashboard shell, reusable UI primitives, and animated presentation layers
+
 ## Stack
 
 - Next.js 15 (App Router)
@@ -89,3 +98,9 @@ When started via docker-compose, frontend is exposed on port 3000 and connected 
 - Dark visual shell with motion-enhanced transitions.
 - Shared dashboard shell across authenticated/product pages.
 - Componentized architecture with reusable UI primitives in src/components/ui.
+
+## How Copilot and Codex Were Used
+
+- Copilot was used to shape the README structure, summarize routes and components, and keep the frontend documentation aligned with the app layout.
+- Codex-style assistance was used to inspect the API integration points, deployment settings, and environment variable usage in src/lib/api.ts.
+- The final documentation reflects the current frontend codepaths and production configuration rather than generic boilerplate.
